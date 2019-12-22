@@ -6,6 +6,8 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.dmti.sgroe.dto.AuthorDTO;
+
 @Document
 public class Ocorrencia implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -15,13 +17,13 @@ public class Ocorrencia implements Serializable {
 	private Date data;
 	private String titulo;
 	private String msg;
-	private User author;
+	private AuthorDTO author;
 	
 	public Ocorrencia() {
 		
 	}
 
-	public Ocorrencia(String id, Date data, String titulo, String msg, User author) {
+	public Ocorrencia(String id, Date data, String titulo, String msg, AuthorDTO author) {
 		super();
 		this.id = id;
 		this.data = data;
@@ -62,11 +64,11 @@ public class Ocorrencia implements Serializable {
 		this.msg = msg;
 	}
 	
-	public User getAuthor() {
+	public AuthorDTO getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(User author) {
+	public void setAuthor(AuthorDTO author) {
 		this.author = author;
 	}
 
